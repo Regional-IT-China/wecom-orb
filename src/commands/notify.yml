@@ -25,4 +25,4 @@ steps:
       when: always
       name: << parameters.step_name >>
       environment:
-      command: echo 'export CCI_STATUS="always"'
+      command: <<include(scripts/main.sh)>>
