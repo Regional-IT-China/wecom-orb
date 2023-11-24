@@ -1,9 +1,7 @@
 version: 2.1
 
 description: >
-  Sample orb description
-  Implement event-based notifications across all of your CI/CD pipelines. Utilizing built-in message templates, 
-  create and customize notifications specific to your organization's needs.
+  Implement event-based notifications across all of your CI/CD pipelines. Utilizing built-in message templates, create and customize notifications specific to your organization's needs.
 
 display:
   home_url: "https://github.com/Regional-IT-China/wecom-orb/wiki"
