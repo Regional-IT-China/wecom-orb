@@ -6,6 +6,10 @@ parameters:
     type: string
     default: "World"
     description: "Hello to whom?"
+  step_name:
+    type: string
+    default: Wecom - Sending Notification
+    description: Specify a custom step name for this command, if desired
 steps:
   - run:
       when: on_fail
