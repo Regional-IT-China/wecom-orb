@@ -1,5 +1,5 @@
 description: >
-  Send a wecom notification when a job fails. This example uses a pre-included template. 
+  Send a wecom notification when a job fails. This example uses a pre-included template.
 
 usage:
   version: 2.1

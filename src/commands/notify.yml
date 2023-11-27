@@ -9,7 +9,7 @@ parameters:
       In what event should this message send? Options: ["fail", "pass", "always"]
     type: enum
     enum: ["fail", "pass", "always"]
-    default: "always"  
+    default: "always"
   step_name:
     type: string
     default: Wecom - Sending Notification
