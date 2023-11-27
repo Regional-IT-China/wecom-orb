@@ -23,6 +23,7 @@ steps:
       when: always
       name: << parameters.step_name >>
       environment:
+        WECOM_SCRIPT_UTILS: "<<include(scripts/utils.sh)>>"
         basic_fail_1: "<<include(message_templates/basic_fail_1.json)>>"
         basic_success_1: "<<include(message_templates/basic_success_1.json)>>"
       command: <<include(scripts/main.sh)>>

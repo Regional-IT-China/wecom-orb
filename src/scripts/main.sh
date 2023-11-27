@@ -2,7 +2,7 @@
 # shellcheck disable=SC2016,SC3043
 
 # Import utils.
-eval "$SLACK_SCRIPT_UTILS"
+eval "$WECOM_SCRIPT_UTILS"
 JQ_PATH=/usr/local/bin/jq
 
 BuildMessageBody() {
