@@ -5,26 +5,24 @@
 eval "$SLACK_SCRIPT_UTILS"
 JQ_PATH=/usr/local/bin/jq
 
-#BuildMessageBody() {
-#
-#    if [ "$CCI_STATUS" = "pass" ]; then TEMPLATE="\$basic_success_1"
-#    elif [ "$CCI_STATUS" = "fail" ]; then TEMPLATE="\$basic_fail_1"
-#    else echo "A template wasn't provided nor is possible to infer it based on the job status. The job status: '$CCI_STATUS' is unexpected."; exit 1
-#    fi
-#
-#    template_body="$(eval printf '%s' \""$TEMPLATE\"")"
-#    SanitizeVars "$template_body"
-#
-#    # shellcheck disable=SC2016
-#    T1="$(printf '%s' "$template_body" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | sed 's/`/\\`/g')"
-#    T2="$(eval printf '%s' \""$T1"\")"
-#
-#    WECOM_MSG_BODY="$T2"
-#}
+BuildMessageBody() {
+    if [ "$CCI_STATUS" = "pass" ]; then TEMPLATE="\$basic_success_1"
+    elif [ "$CCI_STATUS" = "fail" ]; then TEMPLATE="\$basic_fail_1"
+    else echo "A template wasn't provided nor is possible to infer it based on the job status. The job status: '$CCI_STATUS' is unexpected."; exit 1
+    fi
+
+    template_body="$(eval printf '%s' \""$TEMPLATE\"")"
+    SanitizeVars "$template_body"
+
+    # shellcheck disable=SC2016
+    T1="$(printf '%s' "$template_body" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g' | sed 's/`/\\`/g')"
+    T2="$(eval printf '%s' \""$T1"\")"
+
+    WECOM_MSG_BODY="$T2"
+}
 
 PostToWecom() {
     echo "Sending notification to Wecom group..."
-    WECOM_MSG_BODY="{\"msgtype\": \"text\", \"text\": {\"content\": \"this is a notification message from circleci\"}}"
     WECOM_SENT_RESPONSE=$(curl -s -f -X POST -H 'Content-type: application/json' --data "$WECOM_MSG_BODY" https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="$WECOM_ACCESS_TOKEN")
 
     WECOM_ERROR_MSG=$(echo "$WECOM_SENT_RESPONSE" | jq '.errmsg')
@@ -115,6 +113,7 @@ ORB_TEST_ENV="bats-core"
 if [ "${0#*"$ORB_TEST_ENV"}" = "$0" ]; then
     # shellcheck source=/dev/null
     . "/tmp/WECOM_JOB_STATUS"
+    BuildMessageBody
     CheckEnvVars
     InstallJq
     PostToWecom
