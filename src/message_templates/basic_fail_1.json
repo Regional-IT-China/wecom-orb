@@ -1,6 +1,40 @@
 {
-	"msgtype": "text",
-	"text": {
-		"content": "Job failed"
+	"msgtype":"template_card",
+	"template_card":{
+		"card_type":"text_notice",
+		"source":{
+			"icon_url":"https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
+			"desc":"CircleCI",
+			"desc_color":0
+		},
+		"main_title":{
+			"title":"CircleCI job failed!"
+		},
+		"sub_title_text":"下载企业微信还能抢红包！",
+		"horizontal_content_list":[
+			{
+				"keyname":"Project: ",
+				"value":"$CIRCLE_PROJECT_REPONAME"
+			},
+			{
+				"keyname":"Branch: ",
+				"value":"$CIRCLE_BRANCH"
+			},
+			{
+				"keyname":"Commit: ",
+				"value":"$CIRCLE_SHA1"
+			},
+			{
+				"keyname":"Author: ",
+				"value":"$CIRCLE_USERNAME"
+			}
+		],
+		"jump_list":[
+			{
+				"type":1,
+				"url":"$CIRCLE_BUILD_URL",
+				"title":"View build details"
+			}
+		]
 	}
 }
