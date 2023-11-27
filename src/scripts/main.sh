@@ -26,7 +26,7 @@ PostToWecom() {
     WECOM_SENT_RESPONSE=$(curl -s -f -X POST -H 'Content-type: application/json' --data "$WECOM_MSG_BODY" https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="$WECOM_ACCESS_TOKEN")
 
     WECOM_ERROR_MSG=$(echo "$WECOM_SENT_RESPONSE" | jq '.errmsg')
-    if [ ! "$WECOM_ERROR_MSG" = "null" ]; then
+    if [ ! "$WECOM_ERROR_MSG" = "ok" ]; then
         echo "Wecom API returned an error message:"
         echo "$WECOM_ERROR_MSG"
         echo
