@@ -24,7 +24,7 @@ JQ_PATH=/usr/local/bin/jq
 
 PostToWecom() {
     echo "Sending notification to Wecom group..."
-    WECOM_MSG_BODY="{\"msgtype\": \"text\", \"text\": {\"content\": \"this is a notification message from circleci}}"
+    WECOM_MSG_BODY="{\"msgtype\": \"text\", \"text\": {\"content\": \"this is a notification message from circleci\"}}"
     WECOM_SENT_RESPONSE=$(curl -s -f -X POST -H 'Content-type: application/json' --data "$WECOM_MSG_BODY" https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="$WECOM_ACCESS_TOKEN")
 
     WECOM_ERROR_MSG=$(echo "$WECOM_SENT_RESPONSE" | jq '.errmsg')
