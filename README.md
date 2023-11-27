@@ -1,26 +1,23 @@
-# Orb Template
+# Wecom Orb
+[![CircleCI Build Status](https://circleci.com/gh/Regional-IT-China/wecom-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/Regional-IT-China/wecom-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/regional-it-china/wecom.svg)](https://circleci.com/developer/orbs/orb/regional-it-china/wecom) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Regional-IT-China/wecom-orb/main/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
+Send Wecom group notifications from your CircleCI pipelines even easier with Wecom Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/Regional-IT-China/wecom-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/Regional-IT-China/wecom-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/regional-it-china/wecom-orb.svg)](https://circleci.com/developer/orbs/orb/regional-it-china/wecom-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Regional-IT-China/wecom-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[What are Orbs?](https://circleci.com/orbs/)
 
+## Usage
 
+### Setup
+In order to use the Wecom Orb on CircleCI you will need to create a Wecom Group robot. Find the guide in the wiki: [How to setup Wecom orb](https://github.com/Regional-IT-China/wecom-orb/wiki/Setup)
 
-A project template for Orbs.
-
-This repository is designed to be automatically ingested and modified by the CircleCI CLI's `orb init` command.
-
-_**Edit this area to include a custom title and description.**_
-
----
+### Use In Config
+For full usage guidelines, see the [Orb Registry listing](https://circleci.com/developer/orbs/orb/regional-it-china/wecom).
 
 ## Resources
-
-[CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/regional-it-china/wecom-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
-
+[CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/regional-it-china/wecom) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 [CircleCI Orb Docs](https://circleci.com/docs/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
 
 ### How to Contribute
-
 We welcome [issues](https://github.com/Regional-IT-China/wecom-orb/issues) to and [pull requests](https://github.com/Regional-IT-China/wecom-orb/pulls) against this repository!
 
 ### How to Publish An Update
