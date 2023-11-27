@@ -3,3 +3,5 @@ orb.yml
 .DS_Store
 
 .idea
+
+.talismanrc
