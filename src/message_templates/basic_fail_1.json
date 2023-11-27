@@ -32,13 +32,13 @@
 		"jump_list":[
 			{
 				"type":1,
-				"url":"$CIRCLE_BUILD_URL",
+				"url":"${CIRCLE_BUILD_URL}",
 				"title":"View build details"
 			}
 		],
 		"card_action":{
 			"type":1,
-			"url":"$CIRCLE_BUILD_URL"
+			"url":"${CIRCLE_BUILD_URL}"
 		}
 	}
 }
