@@ -5,7 +5,7 @@
 		"main_title":{
 			"title":"CircleCI job failed!"
 		},
-		"sub_title_text": "${CIRCLE_JOB}",
+		"sub_title_text": "Job: ${CIRCLE_JOB}",
 		"horizontal_content_list":[
 			{
 				"keyname":"Project: ",
