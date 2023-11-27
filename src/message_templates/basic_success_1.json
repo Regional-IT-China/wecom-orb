@@ -3,14 +3,13 @@
 	"template_card":{
 		"card_type":"text_notice",
 		"source":{
-			"icon_url":"https://assets.brandfolder.com/otz5mn-bw4j2w-6jzqo8/original/circle-logo-badge-black.png",
+			"icon_url":"https://circleci.com/docs/assets/img/docs/svg-passed.png",
 			"desc":"CircleCI",
 			"desc_color":0
 		},
 		"main_title":{
 			"title":"CircleCI job succeeded!"
 		},
-		"sub_title_text":"下载企业微信还能抢红包！",
 		"horizontal_content_list":[
 			{
 				"keyname":"Project: ",
