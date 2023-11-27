@@ -107,12 +107,29 @@ SanitizeVars() {
   return 0;
 }
 
+ShouldPost() {
+    if [ "$CCI_STATUS" = "$WECOM_PARAM_EVENT" ] || [ "$WECOM_PARAM_EVENT" = "always" ]; then
+        # In the event the WECOM notification would be sent, first ensure it is allowed to trigger
+        # on this branch or this tag.
+
+        echo "Posting Status"
+    else
+        # dont send message.
+        echo "NO WECOM ALERT"
+        echo
+        echo "This command is set to send an alert on: $WECOM_PARAM_EVENT"
+        echo "Current status: ${CCI_STATUS}"
+        exit 0
+    fi
+}
+
 # Will not run if sourced from another script.
 # This is done so this script may be tested.
 ORB_TEST_ENV="bats-core"
 if [ "${0#*"$ORB_TEST_ENV"}" = "$0" ]; then
     # shellcheck source=/dev/null
     . "/tmp/WECOM_JOB_STATUS"
+    ShouldPost
     BuildMessageBody
     CheckEnvVars
     InstallJq

@@ -27,7 +27,13 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
-      - wecom/notify
+      - wecom/notify:
+          event: always
+      - wecom/notify:
+          event: pass
+      - wecom/notify:
+          event: fail
+
 workflows:
   test-deploy:
     jobs:

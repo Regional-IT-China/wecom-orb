@@ -1,13 +1,13 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  Send a wecom notification when a job fails. This example uses a pre-included template. 
+
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    wecom: regional-it-china/wecom@1.2.0
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - wecom/notify:
+            event: fail
+            context: wecom-orb-test

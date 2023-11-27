@@ -4,6 +4,12 @@ description: |
   For instructions on how to set them, follow the setup guide available in the wiki: https://github.com/Regional-IT-China/wecom-orb/wiki/Setup.
 
 parameters:
+  event:
+    description: |
+      In what event should this message send? Options: ["fail", "pass", "always"]
+    type: enum
+    enum: ["fail", "pass", "always"]
+    default: "always"  
   step_name:
     type: string
     default: Wecom - Sending Notification
@@ -23,6 +29,7 @@ steps:
       when: always
       name: << parameters.step_name >>
       environment:
+        WECOM_PARAM_EVENT: "<<parameters.event>>"
         WECOM_SCRIPT_UTILS: "<<include(scripts/utils.sh)>>"
         basic_fail_1: "<<include(message_templates/basic_fail_1.json)>>"
         basic_success_1: "<<include(message_templates/basic_success_1.json)>>"
