@@ -53,7 +53,7 @@ InstallJq() {
 }
 
 CheckEnvVars() {
-    if [ -z "${SLACK_ACCESS_TOKEN:-}" ]; then
+    if [ -z "${WECOM_ACCESS_TOKEN:-}" ]; then
         echo "In order to use the Wecom Orb, an token must be present via the WECOM_ACCESS_TOKEN environment variable."
         echo "Follow the setup guide available in the wiki: https://github.com/Regional-IT-China/wecom-orb/wiki/Setup"
         exit 1
