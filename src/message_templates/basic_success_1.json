@@ -2,13 +2,11 @@
 	"msgtype":"template_card",
 	"template_card":{
 		"card_type":"text_notice",
-		"source":{
-			"icon_url":"https://circleci.com/docs/assets/img/docs/svg-passed.png",
-			"desc":"CircleCI",
-			"desc_color":0
-		},
 		"main_title":{
 			"title":"CircleCI job succeeded!"
+		},
+		"emphasis_content":{
+			"title":"${CIRCLE_JOB}"
 		},
 		"horizontal_content_list":[
 			{
